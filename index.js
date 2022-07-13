@@ -1,7 +1,7 @@
 function computerPlay(userChoice){
     let botChoice=Math.floor(Math.random() * 3) + 1;
-    console.log(botChoice)
-    if(userChoice === "Rock"){
+
+    if(userChoice === "rock"){
         if(botChoice === 1){
             return "draw"
         }else if(botChoice === 2){
@@ -9,7 +9,7 @@ function computerPlay(userChoice){
         }else if(botChoice === 3){
             return "win"
         }
-    }else if(userChoice === "Paper"){
+    }else if(userChoice === "paper"){
         if(botChoice === 1){
             return "win"
         }else if(botChoice === 2){
@@ -17,7 +17,7 @@ function computerPlay(userChoice){
         }else if(botChoice === 3){
             return "lose"
         }
-    }else if (userChoice === "Scissors"){
+    }else if (userChoice === "scissors"){
         if(botChoice === 1){
             return "lose"
         }else if(botChoice === 2){
@@ -28,6 +28,12 @@ function computerPlay(userChoice){
     }
 }
 
-let userChoice =prompt("Rock Paper or Scissors?")
-
-console.log(computerPlay(userChoice))
+document.getElementById("choice").addEventListener('click', e =>{
+    if(e.target.matches('img.rock')){
+        console.log(computerPlay("rock"))
+    }else if(e.target.matches('img.paper')){
+        console.log(computerPlay("paper"))
+    }else if (e.target.matches('img.scissors')){
+        console.log(computerPlay("scissors"))
+    }
+})
