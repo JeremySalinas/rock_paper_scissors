@@ -1,42 +1,108 @@
+@font-face {
+    font-family: 'tom hand';
+    src: url(Font/tomhand.ttf);
+}
+
 body{
     margin: 0;
     background: url(img/background.jpg) no-repeat;
     background-size: cover;
 }
 
+h1{
+    font-family: 'tom hand';
+    text-align: center;
+    font-size: 50px;
+}
 
-/* #preloader{
-    background: #000 url(img/smile.gif) no-repeat center center;
-    height: 100vh;
+.UI{
+    display: flex;
+    flex-direction: column;
+    margin-top: 150px;
+}
+
+.images{
+    display: flex;
+    justify-content: space-around;
+}
+
+#choiceUI{
+    display: flex;
+    flex-direction: column;
+}
+
+.weaponText{
+    font-size: 30px;
+    font-weight: bold;
+    font-family: 'tom hand';
+    margin-left: 350px;
+    margin-bottom: 25px;
+}
+
+.userChoice{
+    display: flex;
+    gap: 56px;
+}
+
+.container{
+    position: relative;
+}
+
+.overlay{
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
-    position: fixed;
-    z-index: 100;
-    margin: 0;
-} */
-
-#choice{
-    display: flex;
-    gap: 144px;
-    justify-content: center;
-    margin-top: 200px;
-    margin: 0;
-}
-
-.rock, .paper, .scissors{
-
-
-}
-
-.tries{
-    display: flex;
-    gap: 20px;
-    font-size: 80px;
+    height: 100%;
+    font-family: 'tom hand';
+    font-size: 24px;
     font-weight: bolder;
-    text-decoration: none;
+    display: flex;
     justify-content: center;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.6);
+    border-radius: 10px;
+    opacity: 0;
+    color: white;
+    transition: .5s ease;
+    backdrop-filter: blur(3px);
 }
 
-.strikes{
-    color: red;
-    list-style-type: none;
+.overlay:hover{
+    opacity: 1;
+    transition: .5s ease;
+    
 }
+
+.overlay > *{
+    transform: translateY(20px);
+    transition: .5s ease;
+}
+
+.overlay:hover > *{
+    transform: translateY(0px);
+}
+
+.rock{
+    background: url(img/rock.png);
+    background-size: cover;
+}
+
+.paper{
+    background: url(img/paper.png);
+    background-size: cover;
+}
+
+.scissors{
+    background: url(img/scissors.png);
+    background-size: cover;
+}
+
+button{
+    width: 150px;
+    height: 150px;
+    border-radius: 10px;
+}
+
+
+

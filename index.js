@@ -28,17 +28,30 @@ function computerPlay(userChoice){
     }
 }
 
-let outcome = document.createElement('p')
-outcome.style.color = 'white'
+function playgame(){
+    let outcome = document.createElement('p')
+    outcome.style.color = 'black'
+    outcome.style.fontFamily = 'tom hand'
+    outcome.style.fontSize = "45px"
+    outcome.style.textAlign = 'center'
 
-document.getElementById("choice").addEventListener('click', e =>{
-    if(e.target.matches('img.rock')){
-        outcome.textContent = computerPlay("rock")
-    }else if(e.target.matches('img.paper')){
-        outcome.textContent = computerPlay("paper")
-    }else if (e.target.matches('img.scissors')){
-        outcome.textContent = computerPlay("scissors")
-    }
+        document.getElementById("choicesUI").addEventListener('click', e =>{
+            for(let i=0; i<3;i++){
+            if(e.target.innerText === "Rock"){
+                outcome.textContent = computerPlay("rock")
+            }else if(e.target.innerText === "Paper"){
+                outcome.textContent = computerPlay("paper")
+            }else if (e.target.innerText === "Scissors"){
+                outcome.textContent = computerPlay("scissors")
+            }
+            console.log(i)
+            }
 
-document.getElementById('choice').appendChild(outcome);
-})
+        document.getElementById('outcome').appendChild(outcome);
+        })
+
+}
+
+for(let i=0; i<3; i++){
+    playgame()
+}

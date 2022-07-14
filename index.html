@@ -2,28 +2,60 @@
 <html>
 <head>
   <meta charset="UTF-8">
-  <title>Page Title</title>
+  <title>Rock/Paper/Scrissors</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <!-- <div id="preloader"></div> -->
-  <div></div>
-  <div id="choice">
-    <button><img class="rock" src="img/hand.png" width="100"/></button>
-    <button><img class="paper" src="img/paper.png" width="100"></button>
-    <button><img class="scissors" src="img/scissors.png" width="100"/></button>
+  <h1>Rock, Paper, Scissors</h1>
 
+  <div class="UI">
+
+    <div class="weaponText">Choose your weapon!</div>
+    
+    <div class="images">
+      <div id="choicesUI">
+
+        <div class="userChoice">
+          <div class="container">
+            <button class="rock"></button>
+            <div class="overlay">
+              <div class="text">Rock</div>
+            </div>
+          </div>
+
+          <div class="container">
+            <button class="paper"></button>
+            <div class="overlay">
+              <div class="text">Paper</div>
+            </div>
+          </div>
+
+          <div class="container">
+            <button class="scissors"></button>
+            <div class="overlay">
+              <div class="text">Scissors</div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+      <div id="computer">
+        
+        <div class="container">
+          <button class="scissors"></button>
+          <div class="overlay">
+            <div class="text">Computer</div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
   </div>
 
-  <div>
-    <ul class="tries">
-      <li class="strikes">x</li>
-      <li class="strikes">x</li>
-      <li class="strikes">x</li>
-      <li class="strikes">x</li>
-      <li class="strikes">x</li>
-    </ul>
-  </div>
+  <div id="outcome"></div>
 </body>
 <script src="index.js"></script>
 </html>
