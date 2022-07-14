@@ -28,12 +28,17 @@ function computerPlay(userChoice){
     }
 }
 
+let outcome = document.createElement('p')
+outcome.style.color = 'white'
+
 document.getElementById("choice").addEventListener('click', e =>{
     if(e.target.matches('img.rock')){
-        console.log(computerPlay("rock"))
+        outcome.textContent = computerPlay("rock")
     }else if(e.target.matches('img.paper')){
-        console.log(computerPlay("paper"))
+        outcome.textContent = computerPlay("paper")
     }else if (e.target.matches('img.scissors')){
-        console.log(computerPlay("scissors"))
+        outcome.textContent = computerPlay("scissors")
     }
+
+document.getElementById('choice').appendChild(outcome);
 })
