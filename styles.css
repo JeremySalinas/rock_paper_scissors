@@ -7,6 +7,7 @@ body{
     margin: 0;
     background: url(img/background.jpg) no-repeat;
     background-size: cover;
+    
 }
 
 h1{
@@ -18,7 +19,7 @@ h1{
 .UI{
     display: flex;
     flex-direction: column;
-    margin-top: 150px;
+    margin-top: 300px;
 }
 
 .images{
@@ -98,11 +99,25 @@ h1{
     background-size: cover;
 }
 
-button{
-    width: 150px;
-    height: 150px;
+.rock, .paper, .scissors, .generated{
+    width: 350px;
+    height: 350px;
     border-radius: 10px;
 }
 
+#outcome{
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row;
+    color: black;
+    font-family: 'tom hand';
+    font-size: 45px;
+    gap: 20px;
+}
+
+.retry{
+    font-family: 'tom hand';
+    padding: 20px;
+}
 
 
