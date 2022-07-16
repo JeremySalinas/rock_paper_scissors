@@ -1,40 +1,43 @@
-function computerPlay(userChoice){
+
+function gamePlay(userChoice){
     let botChoice=Math.floor(Math.random() * 3) + 1;
+    let result = ""
 
     if(userChoice === "rock"){
         if(botChoice === 1){
-            return "draw"
+            result = "draw"
         }else if(botChoice === 2){
-            return "lose"
+            result = "lose"
         }else if(botChoice === 3){
-            return "win"
+            result = "win"
         }
     }else if(userChoice === "paper"){
         if(botChoice === 1){
-            return "win"
+            result = "win"
         }else if(botChoice === 2){
-            return "draw"
+            result = "draw"
         }else if(botChoice === 3){
-            return "lose"
+            result = "lose"
         }
     }else if (userChoice === "scissors"){
         if(botChoice === 1){
-            return "lose"
+            result = "lose"
         }else if(botChoice === 2){
-            return "win"
+            result = "win"
         }else if(botChoice === 3){
-            return "draw"
-        }
-
-
-        if(botChoice === 1){
-            document.querySelector(".generated").style.background= 'url(img/rock.png)'
-        }else if(botChoice === 2){
-            document.querySelector(".generated").style.background= 'url(img/paper.png)'
-        }else if(botChoice === 3){
-            document.querySelector(".generated").style.background= 'url(img/scissors.png)'
+            result = "draw"
         }
     }
+
+    if(botChoice === 1){
+        document.querySelector(".generated").style.background= 'url(img/rock.png)'
+    }else if(botChoice === 2){
+        document.querySelector(".generated").style.background= 'url(img/paper.png)'
+    }else if(botChoice === 3){
+        document.querySelector(".generated").style.background= 'url(img/scissors.png)'
+    }
+
+    return result
 }
 
     let userScore=0
@@ -44,6 +47,7 @@ function computerPlay(userChoice){
     let computScoreText = document.createElement('div')
 
         document.getElementById("choicesUI").addEventListener('click', e =>{
+            console.log(e)
 
             if(userScore > 4 || computScore > 4){
                 if(userScore === 5){
@@ -51,16 +55,17 @@ function computerPlay(userChoice){
                 }else if(computScore === 5){
                     outcome.textContent = "You lose"
                 }
-                document.createElement
-                gameOutcome = "draw"
+                document.querySelector(".retry").style.visibility = 'visible'
+                gameOutcome = "Game Over"
             }else if(e.target.innerText === "Rock"){
-                gameOutcome = computerPlay("rock")
+                gameOutcome = gamePlay("rock")
                 outcome.textContent = gameOutcome
             }else if(e.target.innerText === "Paper"){
-                gameOutcome = computerPlay("paper")
+                console.log("works")
+                gameOutcome = gamePlay("paper")
                 outcome.textContent = gameOutcome
             }else if (e.target.innerText === "Scissors"){
-                gameOutcome = computerPlay("scissors")
+                gameOutcome = gamePlay("scissors")
                 outcome.textContent = gameOutcome
             }
 
@@ -69,7 +74,7 @@ function computerPlay(userChoice){
             }else if(gameOutcome ==="lose"){
                 computScore ++
             }
-            console.log(userScoreText)
+
             userScoreText.textContent = userScore
             computScoreText.textContent = computScore
 

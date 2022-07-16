@@ -16,6 +16,12 @@ h1{
     font-size: 50px;
 }
 
+h2{
+    font-family: 'tom hand';
+    text-align: center;
+    font-size: 45px;
+}
+
 .UI{
     display: flex;
     flex-direction: column;
@@ -98,7 +104,9 @@ h1{
     background: url(img/scissors.png);
     background-size: cover;
 }
-
+.generated{
+    background-color: rgba(239,230,223);
+}
 .rock, .paper, .scissors, .generated{
     width: 350px;
     height: 350px;
@@ -115,9 +123,18 @@ h1{
     gap: 20px;
 }
 
+.centerbtn{
+    display: flex;
+    justify-content: center;
+}
+
 .retry{
     font-family: 'tom hand';
-    padding: 20px;
+    font-size: larger;
+    width: 80px;
+    height: 30px;
+    font-weight: bold;
+    visibility: hidden;
 }
 
 
