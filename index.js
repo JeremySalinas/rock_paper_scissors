@@ -40,6 +40,7 @@ function gamePlay(userChoice){
     return result
 }
 
+    let gameOutcome=""
     let userScore=0
     let computScore=0
     let outcome = document.createElement('div')
@@ -47,21 +48,13 @@ function gamePlay(userChoice){
     let computScoreText = document.createElement('div')
 
         document.getElementById("choicesUI").addEventListener('click', e =>{
-            console.log(e)
 
-            if(userScore > 4 || computScore > 4){
-                if(userScore === 5){
-                    outcome.textContent = "You win"
-                }else if(computScore === 5){
-                    outcome.textContent = "You lose"
-                }
-                document.querySelector(".retry").style.visibility = 'visible'
-                gameOutcome = "Game Over"
+            if(gameOutcome === "Game Over"){
+                console.log(gameOutcome)
             }else if(e.target.innerText === "Rock"){
                 gameOutcome = gamePlay("rock")
                 outcome.textContent = gameOutcome
             }else if(e.target.innerText === "Paper"){
-                console.log("works")
                 gameOutcome = gamePlay("paper")
                 outcome.textContent = gameOutcome
             }else if (e.target.innerText === "Scissors"){
@@ -77,6 +70,16 @@ function gamePlay(userChoice){
 
             userScoreText.textContent = userScore
             computScoreText.textContent = computScore
+
+            if(userScore > 4 || computScore > 4){
+                if(userScore === 5){
+                    outcome.textContent = "You win"
+                }else if(computScore === 5){
+                    outcome.textContent = "You lose"
+                }
+                document.querySelector(".retry").style.visibility = 'visible'
+                gameOutcome = "Game Over"
+        }
 
         document.getElementById('outcome').appendChild(userScoreText);
         document.getElementById('outcome').appendChild(outcome);
