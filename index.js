@@ -37,6 +37,9 @@ function gamePlay(userChoice){
         document.querySelector(".generated").style.background= 'url(img/scissors.png)'
     }
 
+    document.querySelector(".generated").style.backgroundSize = 'cover'
+    
+
     return result
 }
 
@@ -68,14 +71,14 @@ function gamePlay(userChoice){
                 computScore ++
             }
 
-            userScoreText.textContent = userScore
-            computScoreText.textContent = computScore
+            userScoreText.textContent = "User:"+userScore
+            computScoreText.textContent = "NPC:"+computScore
 
             if(userScore > 4 || computScore > 4){
                 if(userScore === 5){
-                    outcome.textContent = "You win"
+                    outcome.textContent = "You win!"
                 }else if(computScore === 5){
-                    outcome.textContent = "You lose"
+                    outcome.textContent = "You lose."
                 }
                 document.querySelector(".retry").style.visibility = 'visible'
                 gameOutcome = "Game Over"
